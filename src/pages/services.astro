@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'roofing',
+    icon: '🏚️',
+    title: 'Roofing',
+    description: 'Your roof is your home\'s first line of defense. We handle everything from minor repairs to complete replacements — using quality materials built to withstand Kansas weather.',
+    items: ['Asphalt shingle installation & replacement', 'Storm damage repair', 'Roof inspections', 'Leak detection & repair', 'Ventilation improvements'],
+  },
+  {
+    id: 'gutters',
+    icon: '🌧️',
+    title: 'Gutters',
+    description: 'Properly functioning gutters protect your foundation, siding, and landscaping. We install, repair, and clean gutter systems for homes of all sizes.',
+    items: ['Seamless gutter installation', 'Gutter cleaning & flushing', 'Downspout installation & repair', 'Gutter guard systems', 'Fascia & soffit repair'],
+  },
+  {
+    id: 'siding',
+    icon: '🏗️',
+    title: 'Siding',
+    description: 'New siding transforms the look of your home while adding insulation and weather protection. We install durable siding that\'s built to last.',
+    items: ['Vinyl siding installation', 'Siding repair & replacement', 'Storm damage assessment', 'Color & style consultation', 'Trim & accent work'],
+  },
+  {
+    id: 'painting',
+    icon: '🎨',
+    title: 'Interior & Exterior Painting',
+    description: 'A fresh coat of paint is one of the most impactful upgrades you can make. We take care of all the prep work so the final finish looks and lasts its best.',
+    items: ['Exterior house painting', 'Interior room painting', 'Trim & detail work', 'Deck & fence staining', 'Power washing & surface prep'],
+  },
+];
+---
+
+<Layout title="Our Services" description="Roofing, gutters, siding, and painting services from Best Top Exteriors in Wichita, KS.">
+
+  <!-- Hero -->
+  <section class="section section--navy page-hero">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>Quality exterior work for Wichita homeowners — done right, every time.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  {services.map((service, i) => (
+    <section id={service.id} class:list={['section', i % 2 === 0 ? 'section--white' : 'section--gray100']}>
+      <div class="container service-block">
+        <div class="service-block__header">
+          <span class="service-block__icon">{service.icon}</span>
+          <h2>{service.title}</h2>
+        </div>
+        <div class="service-block__body">
+          <p class="service-block__desc">{service.description}</p>
+          <ul class="service-list">
+            {service.items.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="service-block__cta">
+          <a href="/contact" class="btn btn--primary">Get an Estimate</a>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Bottom CTA -->
+  <section class="section section--blue cta-band">
+    <div class="container">
+      <h2>Not Sure What You Need?</h2>
+      <p>Give us a call or send us a message. We're happy to walk through your home and give an honest assessment.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn--primary">Contact Us</a>
+        <a href="tel:3168699613" class="btn btn--outline-white">316-869-9613</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.page-hero { text-align: center; }
+.page-hero p { color: rgba(255,255,255,0.8); font-size: 1.15rem; margin-top: 0.75rem; }
+
+.service-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-block__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.service-block__icon { font-size: 2.5rem; }
+.service-block__header h2 { margin: 0; }
+
+.service-block__desc {
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.service-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.5rem 2rem;
+}
+.service-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  padding: 0.25rem 0;
+}
+.service-list li::before {
+  content: '✓';
+  color: var(--color-blue);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-block__cta { margin-top: 0.5rem; }
+
+.cta-band { text-align: center; }
+.cta-band h2 { color: var(--color-white); margin-bottom: 0.75rem; }
+.cta-band p { color: rgba(255,255,255,0.85); margin-bottom: 2rem; }
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.btn--outline-white {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn--outline-white:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+</style>
