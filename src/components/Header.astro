@@ -46,7 +46,7 @@ const { pathname } = Astro.url;
   <div class="topbar__inner">
     <div class="topbar__logo">
       <a href="/">
-        <img src="/logo.png" alt="Best Top Exteriors" height="60" />
+        <img src="/logo.png" alt="Best Top Exteriors" />
       </a>
     </div>
 
@@ -194,39 +194,45 @@ const { pathname } = Astro.url;
 
 .topbar__inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 1.5rem 0.75rem;
+  gap: 0.75rem;
 }
 
-/* Tablet: center the logo */
+/* Tablet: reasonable-size centered logo, hamburger below */
 @media (min-width: 600px) and (max-width: 1023px) {
-  .topbar__inner {
-    justify-content: center;
-    position: relative;
-  }
-
   .topbar__logo {
     display: flex;
     justify-content: center;
-    flex: 1;
-  }
-
-  .hamburger {
-    position: absolute;
-    right: 1.5rem;
-  }
-}
-
-/* Mobile: logo full-width row, hamburger below or inline */
-@media (max-width: 599px) {
-  .topbar__inner {
-    flex-direction: row;
-    justify-content: space-between;
   }
 
   .topbar__logo img {
-    height: 52px;
+    height: 72px;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+/* Mobile: full-width logo with padding, hamburger centered below */
+@media (max-width: 599px) {
+  .topbar__inner {
+    padding: 1rem 1.25rem 0.75rem;
+  }
+
+  .topbar__logo {
+    width: 100%;
+  }
+
+  .topbar__logo a {
+    display: block;
+    width: 100%;
+  }
+
+  .topbar__logo img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
   }
 }
 
