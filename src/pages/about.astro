@@ -22,9 +22,14 @@ import Layout from '../layouts/Layout.astro';
         <p>We also work directly with homeowners through the insurance claim process, and we partner with realtors to help sellers get their properties market-ready with free pre-sale inspections.</p>
       </div>
       <div class="two-col__visual story-visual">
-        <div class="placeholder-img">
-          <span>Photo Coming Soon</span>
-        </div>
+        <img
+          src="https://images.pexels.com/photos/34030968/pexels-photo-34030968.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+          alt="Charming suburban home with lush green landscaping"
+          class="story-img"
+          loading="lazy"
+          width="800"
+          height="600"
+        />
       </div>
     </div>
   </section>
@@ -99,20 +104,12 @@ import Layout from '../layouts/Layout.astro';
 .two-col__text p + p { margin-top: 1rem; }
 .two-col__text h2 { margin-bottom: 1.25rem; }
 
-.placeholder-img {
-  background: var(--gray-200);
+.story-img {
+  width: 100%;
   border-radius: 8px;
+  display: block;
   aspect-ratio: 4/3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.placeholder-img span {
-  font-family: var(--font-heading);
-  font-size: 0.9rem;
-  color: var(--text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  object-fit: cover;
 }
 
 .section-title { text-align: center; margin-bottom: 2.5rem; }

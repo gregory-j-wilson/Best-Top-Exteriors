@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Start Here">
 
   <!-- Hero -->
-  <section class="section section--navy hero">
+  <section class="section section--navy hero" style="background-image: linear-gradient(rgba(13,27,65,0.84), rgba(13,27,65,0.84)), url('https://images.pexels.com/photos/5517853/pexels-photo-5517853.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center;">
     <div class="container">
       <p class="hero__eyebrow">Wichita's Trusted Exterior Experts</p>
       <h1>Your Home Deserves the Best&nbsp;Top</h1>
@@ -96,7 +96,14 @@ import Layout from '../layouts/Layout.astro';
         <p>We offer free inspections to get your property ready for sale. We're experienced at working with realtors and know exactly what buyers and agents are looking for when it comes to curb appeal and exterior condition.</p>
         <a href="/contact" class="btn btn--secondary">Request a Free Pre-Sale Inspection</a>
       </div>
-      <div class="sell-band__icon" aria-hidden="true">🏡</div>
+      <img
+        class="sell-band__img"
+        src="https://images.pexels.com/photos/8288954/pexels-photo-8288954.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+        alt="Modern suburban house for sale with manicured front lawn"
+        loading="lazy"
+        width="600"
+        height="400"
+      />
     </div>
   </section>
 
@@ -211,9 +218,15 @@ import Layout from '../layouts/Layout.astro';
 .sell-band__text { flex: 1 1 300px; }
 .sell-band__text h2 { margin-bottom: 1rem; }
 .sell-band__text p { margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--text-mid); }
-.sell-band__icon { font-size: 5rem; flex-shrink: 0; }
+.sell-band__img {
+  width: 300px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
 @media (max-width: 600px) {
-  .sell-band__icon { display: none; }
+  .sell-band__img { display: none; }
 }
 
 .cta-band { text-align: center; }

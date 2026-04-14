@@ -6,6 +6,8 @@ const services = [
     id: 'roofing',
     icon: '🏚️',
     title: 'Roofing',
+    img: '7788264',
+    imgAlt: 'Construction worker on a residential roof',
     description: 'Your roof is your home\'s first line of defense. We handle everything from minor repairs to complete replacements — and we work directly with your insurance company to make sure you\'re treated fairly after storm damage.',
     items: ['Hail-damaged shingle repair & replacement', 'Wind-damaged & missing shingle repair', 'Tree damage repair', 'Leak detection & repair', 'Roof inspections', 'Ventilation improvements'],
   },
@@ -13,6 +15,8 @@ const services = [
     id: 'gutters',
     icon: '🌧️',
     title: 'Gutters',
+    img: '5071177',
+    imgAlt: 'House exterior showing roofline and gutters',
     description: 'Properly functioning gutters protect your foundation, siding, and landscaping. We install, repair, and clean gutter systems for homes of all sizes.',
     items: ['Seamless gutter installation', 'Gutter cleaning & flushing', 'Downspout installation & repair', 'Gutter guard systems', 'Soffit & fascia board repair', 'Window trim & window sill repair'],
   },
@@ -20,6 +24,8 @@ const services = [
     id: 'siding',
     icon: '🏗️',
     title: 'Siding',
+    img: '6422929',
+    imgAlt: 'House exterior with blue siding during daytime',
     description: 'From rotted boards to cracks and holes, we repair and replace all types of siding — wood, vinyl, and more. New siding transforms the look of your home while adding insulation and weather protection.',
     items: ['Rotted siding repair & replacement', 'Crack & hole repair', 'Wood siding repair', 'Vinyl siding installation & repair', 'Storm damage assessment', 'Trim & accent work'],
   },
@@ -27,6 +33,8 @@ const services = [
     id: 'painting',
     icon: '🎨',
     title: 'Interior & Exterior Painting',
+    img: '1917849',
+    imgAlt: 'Man painting a house exterior with a roller',
     description: 'A fresh coat of paint is one of the most impactful upgrades you can make. We power wash your house and wood deck and handle all the prep work so the finish looks great and lasts.',
     items: ['Exterior house painting', 'Interior room painting', 'Trim & detail work', 'Deck & fence staining', 'Power washing — house & wood decks', 'Surface prep & priming'],
   },
@@ -47,6 +55,16 @@ const services = [
   {services.map((service, i) => (
     <section id={service.id} class:list={['section', i % 2 === 0 ? 'section--white' : 'section--gray100']}>
       <div class="container service-block">
+        {service.img && (
+          <img
+            class="service-hero-img"
+            src={`https://images.pexels.com/photos/${service.img}/pexels-photo-${service.img}.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop`}
+            alt={service.imgAlt}
+            loading="lazy"
+            width="1200"
+            height="400"
+          />
+        )}
         <div class="service-block__header">
           <span class="service-block__icon">{service.icon}</span>
           <h2>{service.title}</h2>
@@ -119,6 +137,14 @@ const services = [
 <style>
 .page-hero { text-align: center; }
 .page-hero p { color: rgba(255,255,255,0.8); font-size: 1.15rem; margin-top: 0.75rem; }
+
+.service-hero-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
 
 .service-block {
   display: flex;

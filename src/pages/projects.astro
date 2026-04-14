@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 
 const projects = [
-  { category: 'Roofing',  location: 'Wichita, KS',  desc: 'Full roof replacement after hail damage — completed in one day.' },
-  { category: 'Painting', location: 'Derby, KS',     desc: 'Full exterior repaint with fresh trim color and front door accent.' },
-  { category: 'Gutters',  location: 'Andover, KS',   desc: 'Seamless gutter installation with leaf guard system.' },
-  { category: 'Siding',   location: 'Haysville, KS', desc: 'Storm-damaged siding replacement on all four sides.' },
-  { category: 'Roofing',  location: 'Maize, KS',     desc: 'Shingle upgrade to architectural grade — improved curb appeal and warranty.' },
-  { category: 'Painting', location: 'Wichita, KS',   desc: 'Interior whole-home paint refresh for a newly purchased home.' },
+  { category: 'Roofing',  location: 'Wichita, KS',  desc: 'Full roof replacement after hail damage — completed in one day.',             img: '19046324', imgAlt: 'Close-up of maroon roofing tiles' },
+  { category: 'Painting', location: 'Derby, KS',     desc: 'Full exterior repaint with fresh trim color and front door accent.',           img: '1917849',  imgAlt: 'Man painting a house exterior with a roller' },
+  { category: 'Gutters',  location: 'Andover, KS',   desc: 'Seamless gutter installation with leaf guard system.',                        img: '5071177',  imgAlt: 'House exterior showing roofline' },
+  { category: 'Siding',   location: 'Haysville, KS', desc: 'Storm-damaged siding replacement on all four sides.',                        img: '6422929',  imgAlt: 'House exterior with blue siding' },
+  { category: 'Roofing',  location: 'Maize, KS',     desc: 'Shingle upgrade to architectural grade — improved curb appeal and warranty.', img: '7788264',  imgAlt: 'Construction worker on a residential roof' },
+  { category: 'Painting', location: 'Wichita, KS',   desc: 'Interior whole-home paint refresh for a newly purchased home.',               img: '6474471',  imgAlt: 'Man painting an interior wall with a roller' },
 ];
 ---
 
@@ -36,6 +36,13 @@ const projects = [
         {projects.map(project => (
           <div class="project-card">
             <div class="project-card__img">
+              <img
+                src={`https://images.pexels.com/photos/${project.img}/pexels-photo-${project.img}.jpeg?auto=compress&cs=tinysrgb&w=600&h=180&fit=crop`}
+                alt={project.imgAlt}
+                loading="lazy"
+                width="600"
+                height="180"
+              />
               <span class="project-card__category">{project.category}</span>
             </div>
             <div class="project-card__body">
@@ -114,15 +121,21 @@ const projects = [
 }
 
 .project-card__img {
-  background: var(--gray-200);
   height: 180px;
-  display: flex;
-  align-items: flex-end;
-  padding: 0.75rem;
   position: relative;
+  overflow: hidden;
+}
+.project-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .project-card__category {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
   background: var(--color-navy);
   color: var(--color-white);
   font-family: var(--font-heading);
