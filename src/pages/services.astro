@@ -6,29 +6,29 @@ const services = [
     id: 'roofing',
     icon: '🏚️',
     title: 'Roofing',
-    description: 'Your roof is your home\'s first line of defense. We handle everything from minor repairs to complete replacements — using quality materials built to withstand Kansas weather.',
-    items: ['Asphalt shingle installation & replacement', 'Storm damage repair', 'Roof inspections', 'Leak detection & repair', 'Ventilation improvements'],
+    description: 'Your roof is your home\'s first line of defense. We handle everything from minor repairs to complete replacements — and we work directly with your insurance company to make sure you\'re treated fairly after storm damage.',
+    items: ['Hail-damaged shingle repair & replacement', 'Wind-damaged & missing shingle repair', 'Tree damage repair', 'Leak detection & repair', 'Roof inspections', 'Ventilation improvements'],
   },
   {
     id: 'gutters',
     icon: '🌧️',
     title: 'Gutters',
     description: 'Properly functioning gutters protect your foundation, siding, and landscaping. We install, repair, and clean gutter systems for homes of all sizes.',
-    items: ['Seamless gutter installation', 'Gutter cleaning & flushing', 'Downspout installation & repair', 'Gutter guard systems', 'Fascia & soffit repair'],
+    items: ['Seamless gutter installation', 'Gutter cleaning & flushing', 'Downspout installation & repair', 'Gutter guard systems', 'Soffit & fascia board repair', 'Window trim & window sill repair'],
   },
   {
     id: 'siding',
     icon: '🏗️',
     title: 'Siding',
-    description: 'New siding transforms the look of your home while adding insulation and weather protection. We install durable siding that\'s built to last.',
-    items: ['Vinyl siding installation', 'Siding repair & replacement', 'Storm damage assessment', 'Color & style consultation', 'Trim & accent work'],
+    description: 'From rotted boards to cracks and holes, we repair and replace all types of siding — wood, vinyl, and more. New siding transforms the look of your home while adding insulation and weather protection.',
+    items: ['Rotted siding repair & replacement', 'Crack & hole repair', 'Wood siding repair', 'Vinyl siding installation & repair', 'Storm damage assessment', 'Trim & accent work'],
   },
   {
     id: 'painting',
     icon: '🎨',
     title: 'Interior & Exterior Painting',
-    description: 'A fresh coat of paint is one of the most impactful upgrades you can make. We take care of all the prep work so the final finish looks and lasts its best.',
-    items: ['Exterior house painting', 'Interior room painting', 'Trim & detail work', 'Deck & fence staining', 'Power washing & surface prep'],
+    description: 'A fresh coat of paint is one of the most impactful upgrades you can make. We power wash your house and wood deck and handle all the prep work so the finish looks great and lasts.',
+    items: ['Exterior house painting', 'Interior room painting', 'Trim & detail work', 'Deck & fence staining', 'Power washing — house & wood decks', 'Surface prep & priming'],
   },
 ];
 ---
@@ -65,6 +65,42 @@ const services = [
       </div>
     </section>
   ))}
+
+  <!-- Leak Detection Callout -->
+  <section class="section section--navy leak-band">
+    <div class="container">
+      <div class="leak-band__inner">
+        <div class="leak-band__icon">🔍</div>
+        <div>
+          <h2>Experts at Finding &amp; Fixing Leaks</h2>
+          <p>Whether it's your roof, windows, or siding — we're experts at tracking down the source of leaks and fixing them right the first time.</p>
+        </div>
+        <a href="/contact" class="btn btn--primary">Schedule an Inspection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Services -->
+  <section id="additional" class="section section--white">
+    <div class="container service-block">
+      <div class="service-block__header">
+        <span class="service-block__icon">🔧</span>
+        <h2>Additional Services</h2>
+      </div>
+      <div class="service-block__body">
+        <p class="service-block__desc">Beyond our core offerings, we provide a range of additional services to keep your property in top shape — including helping homeowners get ready to sell.</p>
+        <ul class="service-list">
+          <li>Fence repairs</li>
+          <li>Window & trim wrapping</li>
+          <li>Free pre-sale home inspections</li>
+          <li>Realtor partnership — getting your property market-ready</li>
+        </ul>
+      </div>
+      <div class="service-block__cta">
+        <a href="/contact" class="btn btn--primary">Ask About Additional Services</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Bottom CTA -->
   <section class="section section--blue cta-band">
@@ -127,6 +163,22 @@ const services = [
 }
 
 .service-block__cta { margin-top: 0.5rem; }
+
+.leak-band { padding: 3rem 2rem; }
+.leak-band__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 2.5rem;
+}
+.leak-band__icon { font-size: 2.5rem; flex-shrink: 0; }
+.leak-band__inner h2 { color: var(--color-white); margin-bottom: 0.4rem; font-size: 1.5rem; }
+.leak-band__inner p { color: rgba(255,255,255,0.85); max-width: 520px; }
+.leak-band__inner > div { flex: 1 1 300px; }
+@media (max-width: 640px) {
+  .leak-band__icon { display: none; }
+  .leak-band__inner { flex-direction: column; align-items: flex-start; }
+}
 
 .cta-band { text-align: center; }
 .cta-band h2 { color: var(--color-white); margin-bottom: 0.75rem; }

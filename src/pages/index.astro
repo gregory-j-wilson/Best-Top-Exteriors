@@ -42,6 +42,11 @@ import Layout from '../layouts/Layout.astro';
           <h3>Local &amp; Trusted</h3>
           <p>We're proud to serve our Wichita community and back our work with real warranties.</p>
         </div>
+        <div class="card">
+          <div class="card__icon">🛡️</div>
+          <h3>Insurance Claim Help</h3>
+          <p>We work directly with your insurance company to make sure you're treated fairly after storm damage.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -69,12 +74,29 @@ import Layout from '../layouts/Layout.astro';
         <a href="/services" class="service-tile">
           <div class="service-tile__icon">🎨</div>
           <h3>Painting</h3>
-          <p>Interior and exterior painting services with meticulous prep and finish.</p>
+          <p>Interior and exterior painting, plus power washing for your house and wood deck.</p>
+        </a>
+        <a href="/services#additional" class="service-tile">
+          <div class="service-tile__icon">🔧</div>
+          <h3>Additional Services</h3>
+          <p>Fence repairs, window &amp; trim wrapping, and free pre-sale home inspections.</p>
         </a>
       </div>
       <div class="center-action">
         <a href="/services" class="btn btn--secondary">View All Services</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Selling Your Home -->
+  <section class="section section--gray100 sell-band">
+    <div class="container sell-band__inner">
+      <div class="sell-band__text">
+        <h2>Looking to Sell Your Home?</h2>
+        <p>We offer free inspections to get your property ready for sale. We're experienced at working with realtors and know exactly what buyers and agents are looking for when it comes to curb appeal and exterior condition.</p>
+        <a href="/contact" class="btn btn--secondary">Request a Free Pre-Sale Inspection</a>
+      </div>
+      <div class="sell-band__icon" aria-hidden="true">🏡</div>
     </div>
   </section>
 
@@ -179,6 +201,20 @@ import Layout from '../layouts/Layout.astro';
 .service-tile p { color: var(--text-mid); font-size: 0.95rem; }
 
 .center-action { text-align: center; }
+
+.sell-band__inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.sell-band__text { flex: 1 1 300px; }
+.sell-band__text h2 { margin-bottom: 1rem; }
+.sell-band__text p { margin-bottom: 1.5rem; font-size: 1.05rem; color: var(--text-mid); }
+.sell-band__icon { font-size: 5rem; flex-shrink: 0; }
+@media (max-width: 600px) {
+  .sell-band__icon { display: none; }
+}
 
 .cta-band { text-align: center; }
 .cta-band h2 { color: var(--color-white); margin-bottom: 0.75rem; }
