@@ -1,14 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const projects = [
-  { category: 'Roofing',  location: 'Wichita, KS',  desc: 'Full roof replacement after hail damage — completed in one day.',             img: '19046324', imgAlt: 'Close-up of maroon roofing tiles' },
-  { category: 'Painting', location: 'Derby, KS',     desc: 'Full exterior repaint with fresh trim color and front door accent.',           img: '1917849',  imgAlt: 'Man painting a house exterior with a roller' },
-  { category: 'Gutters',  location: 'Andover, KS',   desc: 'Seamless gutter installation with leaf guard system.',                        img: '5071177',  imgAlt: 'House exterior showing roofline' },
-  { category: 'Siding',   location: 'Haysville, KS', desc: 'Storm-damaged siding replacement on all four sides.',                        img: '6422929',  imgAlt: 'House exterior with blue siding' },
-  { category: 'Roofing',  location: 'Maize, KS',     desc: 'Shingle upgrade to architectural grade — improved curb appeal and warranty.', img: '7788264',  imgAlt: 'Construction worker on a residential roof' },
-  { category: 'Painting', location: 'Wichita, KS',   desc: 'Interior whole-home paint refresh for a newly purchased home.',               img: '6474471',  imgAlt: 'Man painting an interior wall with a roller' },
-];
 ---
 
 <Layout title="Past Projects" description="See past roofing, gutters, siding, and painting projects from Best Top Exteriors in Wichita, KS.">
@@ -17,40 +8,25 @@ const projects = [
   <section class="section section--navy page-hero">
     <div class="container">
       <h1>Past Projects</h1>
-      <p>Real work. Real results. Right here in the Wichita area.</p>
+      <p>Quality work for homeowners across the Wichita area.</p>
     </div>
   </section>
 
-  <!-- Intro -->
-  <section class="section section--gray100">
-    <div class="container intro-block">
-      <p>We're proud of every project we complete. Below you'll find a sampling of past work across our service offerings. Photos coming soon — check back for updates, or call us to see examples from your specific service area.</p>
-    </div>
-  </section>
-
-  <!-- Project grid -->
+  <!-- Our Past Work -->
   <section class="section section--white">
-    <div class="container--wide projects-section">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="project-grid">
-        {projects.map(project => (
-          <div class="project-card">
-            <div class="project-card__img">
-              <img
-                src={`https://images.pexels.com/photos/${project.img}/pexels-photo-${project.img}.jpeg?auto=compress&cs=tinysrgb&w=600&h=180&fit=crop`}
-                alt={project.imgAlt}
-                loading="lazy"
-                width="600"
-                height="180"
-              />
-              <span class="project-card__category">{project.category}</span>
-            </div>
-            <div class="project-card__body">
-              <p class="project-card__location">{project.location}</p>
-              <p class="project-card__desc">{project.desc}</p>
-            </div>
-          </div>
-        ))}
+    <div class="container">
+      <h2 class="section-title">Our Past Work</h2>
+      <div class="past-work">
+        <img
+          class="past-work__img"
+          src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop"
+          alt="Attractive suburban home with well-maintained exterior"
+          loading="lazy"
+          width="1200"
+          height="600"
+        />
+        <p class="past-work__text">Over the years, we've had the privilege of completing quality exterior projects for homeowners throughout Wichita and the surrounding communities. From full roof replacements and seamless gutter installs to fresh coats of paint and new siding — we take pride in every job we take on, no matter the size. Our goal is always the same: leave every home better than we found it, and every homeowner glad they called us.</p>
+        <p class="past-work__text past-work__text--cta">Photos of our work are coming soon. In the meantime, <a href="/contact">reach out</a> and we'd be happy to talk through what we can do for your home.</p>
       </div>
     </div>
   </section>
@@ -59,27 +35,14 @@ const projects = [
   <section class="section section--gray200">
     <div class="container">
       <h2 class="section-title">What Our Customers Say</h2>
-      <div class="testimonials">
-        <blockquote class="testimonial">
-          <p>"Best Top Exteriors did an incredible job on our roof. They were professional, fast, and the price was exactly what they quoted. Highly recommend!"</p>
-          <cite>— Wichita Homeowner</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"They painted our entire exterior and the transformation was unbelievable. Very thorough prep work and the finish looks perfect."</p>
-          <cite>— Derby, KS</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"Honest, hardworking, and easy to work with. They replaced our gutters quickly and even noticed a small roof issue we didn't know about."</p>
-          <cite>— Andover, KS</cite>
-        </blockquote>
-      </div>
+      <p class="reviews-note">We've been proud to serve many homeowners across the Wichita area. Customer reviews coming soon — in the meantime, give us a call and we're happy to talk through our work.</p>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="section section--navy cta-band">
     <div class="container">
-      <h2>Ready to Add Your Home to This List?</h2>
+      <h2>Ready to Get Started?</h2>
       <p>Get your free estimate today — no pressure, no obligation.</p>
       <a href="/contact" class="btn btn--primary">Request a Free Estimate</a>
     </div>
@@ -91,109 +54,47 @@ const projects = [
 .page-hero { text-align: center; }
 .page-hero p { color: rgba(255,255,255,0.8); font-size: 1.15rem; margin-top: 0.75rem; }
 
-.intro-block p {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.05rem;
-}
-
-.projects-section { padding: 0 2rem; }
 .section-title { text-align: center; margin-bottom: 2.5rem; }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+.past-work {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
 }
 
-.project-card {
-  background: var(--color-white);
-  border: 1px solid var(--gray-200);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: transform 0.15s, box-shadow 0.2s;
-}
-.project-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-
-.project-card__img {
-  height: 180px;
-  position: relative;
-  overflow: hidden;
-}
-.project-card__img img {
+.past-work__img {
   width: 100%;
-  height: 100%;
+  height: 400px;
   object-fit: cover;
+  border-radius: 10px;
   display: block;
 }
 
-.project-card__category {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
-  background: var(--color-navy);
-  color: var(--color-white);
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.3rem 0.75rem;
-  border-radius: 4px;
+.past-work__text {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  text-align: center;
 }
 
-.project-card__body {
-  padding: 1.25rem 1.25rem 1.5rem;
+.past-work__text--cta {
+  color: var(--text-light);
+  font-size: 1rem;
 }
 
-.project-card__location {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 700;
+.past-work__text--cta a {
   color: var(--color-blue);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.4rem;
+  text-decoration: underline;
 }
 
-.project-card__desc {
-  font-size: 0.95rem;
+.reviews-note {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
   color: var(--text-mid);
-}
-
-/* Testimonials */
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.testimonial {
-  background: var(--color-white);
-  border-radius: 8px;
-  padding: 1.75rem;
-  border-left: 4px solid var(--color-red);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.testimonial p {
-  font-style: italic;
-  color: var(--text-mid);
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-}
-
-.testimonial cite {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-navy);
-  font-style: normal;
 }
 
 .cta-band { text-align: center; }
