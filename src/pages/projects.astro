@@ -35,7 +35,10 @@ import Layout from '../layouts/Layout.astro';
   <section class="section section--gray200">
     <div class="container">
       <h2 class="section-title">What Our Customers Say</h2>
-      <p class="reviews-note">We've been proud to serve many homeowners across the Wichita area. Customer reviews coming soon — in the meantime, give us a call and we're happy to talk through our work.</p>
+      <div class="reviews-widget">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-4e30e254-3007-49e1-a6c4-60620a956f28" data-elfsight-app-lazy></div>
+      </div>
     </div>
   </section>
 
@@ -89,12 +92,16 @@ import Layout from '../layouts/Layout.astro';
   text-decoration: underline;
 }
 
-.reviews-note {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  color: var(--text-mid);
+.reviews-widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.reviews-widget > div {
+  width: 100%;
+  max-width: 760px;
 }
 
 .cta-band { text-align: center; }
